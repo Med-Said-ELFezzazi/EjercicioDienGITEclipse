@@ -1,10 +1,3 @@
-/**
- * 
- */
-/**
- * 
- */
-
 module HolaFX {
 	requires javafx.controls;
 	requires javafx.web;
