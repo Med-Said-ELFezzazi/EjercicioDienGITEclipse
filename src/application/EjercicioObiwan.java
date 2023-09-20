@@ -35,7 +35,7 @@ public class EjercicioObiwan extends Application{
         btnSalir.setOnAction(e -> Platform.exit());
         // Creacion y asignacion del VBox y su contenedor
         VBox raiz = new VBox();
-        raiz.getChildren().addAll(lblNombre, fldNombre, btnAceptar, btnSalir);
+        raiz.getChildren().addAll(lblNombre, fldNombre, btnAceptar, btnSalir);;
 
         private void showDialog(Window owner, Modality modality){
             Stage 
