@@ -25,8 +25,31 @@ public class EjercicioObiwan extends Application{
         // dale el button aceptar su funcionamiento
         btnAceptar.setOnAction(e ->{
             String nombre = fldNombre.getText();
-            if (nombre == "Obi wan") {
+            if (nombre.equals("Obi wan")) {
+                mostrarVentanaAlerta();
+                // sale la ventana modal de alerta con el msg
+    /*            Stage dialog = new Stage();
 
+                        // populate dialog with controls.
+                        ...
+
+                        dialog.initOwner(parentStage);
+                        dialog.initModality(Modality.APPLICATION_MODAL); 
+                        dialog.showAndWait();
+
+                        // process result of dialog operation. 
+                        private void clickShow(ActionEvent event) {
+                            Stage stage = new Stage();
+                            Parent root = FXMLLoader.load(
+                                YourClassController.class.getResource("YourClass.fxml"));
+                            stage.setScene(new Scene(root));
+                            stage.setTitle("My modal window");
+                            stage.initModality(Modality.WINDOW_MODAL);
+                            stage.initOwner(
+                                ((Node)event.getSource()).getScene().getWindow() );
+                            stage.show();
+                        }
+                        */
             } else {
                mensaje.setText("Hola "+nombre); 
             }
@@ -35,12 +58,13 @@ public class EjercicioObiwan extends Application{
         btnSalir.setOnAction(e -> Platform.exit());
         // Creacion y asignacion del VBox y su contenedor
         VBox raiz = new VBox();
-        raiz.getChildren().addAll(lblNombre, fldNombre, btnAceptar, btnSalir);
+        raiz.getChildren().addAll(lblNombre, fldNombre, btnAceptar, btnSalir, mensaje);
 
-        private void showDialog(Window owner, Modality modality){
+       /*  private void showDialog(Window owner, Modality modality){
             Stage ...
 
-        }
+        } */
+
 
 
 
@@ -54,6 +78,17 @@ public class EjercicioObiwan extends Application{
         escenario.setTitle("Obi wan");
         escenario.show();
 
+        // ventana Alert modal
+        private void mostrarVentanaAlerta() {
+            // Crea una ventana de alerta modal
+            Alert alerta = new Alert(AlertType.INFORMATION);
+            alerta.setTitle("Ventana modal de alerta");
+            alerta.setHeaderText(null);
+            alerta.setContentText("General Kenobi!!!");
+            
+            // Muestra la ventana de alerta y espera a que el usuario la cierre
+            alerta.showAndWait();
+        }
 
 
     }
