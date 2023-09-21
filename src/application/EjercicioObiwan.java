@@ -3,6 +3,7 @@ package application;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -13,6 +14,17 @@ public class EjercicioObiwan extends Application{
     public static void main(String[] args) {
     	Application.launch(args);
     }
+            // ventana Alert modal
+        private void mostrarVentanaAlerta() {
+            // Crea una ventana de alerta modal
+            Alert alerta = new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+            alerta.setTitle("Ventana modal de alerta");
+            alerta.setHeaderText(null);
+            alerta.setContentText("General Kenobi!!!");
+            
+            // Muestra la ventana de alerta y espera a que el usuario la cierre
+            alerta.showAndWait();
+        }
     public void start(Stage escenario){
         Label lblNombre = new Label("introduce el nombre :");
         TextField fldNombre = new TextField();
@@ -64,12 +76,6 @@ public class EjercicioObiwan extends Application{
             Stage ...
 
         } */
-
-
-
-
-
-
         // Parte final
         //creacion del scene
         Scene escena = new Scene(raiz, 450, 250);
@@ -78,17 +84,7 @@ public class EjercicioObiwan extends Application{
         escenario.setTitle("Obi wan");
         escenario.show();
 
-        // ventana Alert modal
-        private void mostrarVentanaAlerta() {
-            // Crea una ventana de alerta modal
-            Alert alerta = new Alert(AlertType.INFORMATION);
-            alerta.setTitle("Ventana modal de alerta");
-            alerta.setHeaderText(null);
-            alerta.setContentText("General Kenobi!!!");
-            
-            // Muestra la ventana de alerta y espera a que el usuario la cierre
-            alerta.showAndWait();
-        }
+
 
 
     }
